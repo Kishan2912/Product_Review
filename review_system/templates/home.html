@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+        .grid-container {
+          display: grid;
+          grid-template-columns: auto;
+          gap: 10px;
+          background-color: #2196F3;
+          padding: 10px;
+        }
+        
+        .grid-container > div {
+          background-color: rgba(255, 255, 255, 0.8);
+          border: 1px solid black;
+          text-align: center;
+          font-size: 45px;
+        }
+        </style>
+  </head>
+  <body>
+    <div style="text-align:center">
+          <h1 style="color:red">Product Review</h1>
+      </div>
+    
+      <div class="grid-container">
+        <div>
+          {% comment %} <img src="./Watch.jpg" alt="Avatar" style="width:100%"> {% endcomment %}
+          <h3>Soap</h3>
+          <h4>Rating :- {{initial_review}}</h4>
+          {% comment %} <h4>Review of the product : {{total}}</h4> {% endcomment %}
+          <form action="Analyze" method="POST">
+            {% csrf_token %}
+            <label class="text">Enter the review</label>
+            <br /><br />
+            <input class="review_text" name="review_text" type="text" class="width:30px" />
+            <br /><br />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        {% comment %} <div>
+          <h3>Watch</h3>
+          <h4>Rating :- {{initial_review}}</h4>
+          <form action="Analyze" method="POST">
+            {% csrf_token %}
+            <label class="text">Enter the review</label>
+            <br /><br />
+            <input class="review_text" name="review_text" type="text" />
+            <br /><br />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <div>
+          <h3>Mobile</h3>
+          <h4>Rating :- {{initial_review}}</h4>
+          <form action="Analyze" method="POST">
+            {% csrf_token %}
+            <label class="text">Enter the review</label>
+            <br /><br />
+            <input class="review_text" name="review_text" type="text" />
+            <br /><br />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <div>
+          <h3>Laptop</h3>
+          <h4>Rating :- {{initial_review}}</h4>
+          <form action="Analyze" method="POST">
+            {% csrf_token %}
+            <label class="text">Enter the review</label>
+            <br /><br />
+            <input class="review_text" name="review_text" type="text" />
+            <br /><br />
+            <button type="submit">Submit</button>
+          </form>
+        </div> {% endcomment %}
+      </div> 
+  </body>
+</html>
